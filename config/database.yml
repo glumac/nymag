@@ -17,10 +17,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: nymag_development
+  database: nymag2_development
   pool: 5
-  # username: 
-  # password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,15 +44,12 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: nymag_test
+  database: nymag2_test
   pool: 5
-  # username: nymag
-  # password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: nymag_production
+  database: nymag2_production
   pool: 5
-  # username: nymag
-  # password:
+

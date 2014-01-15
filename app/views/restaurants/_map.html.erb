@@ -1,0 +1,25 @@
+
+<div style='width: 100%;'>
+  <div id="map" style='width: 100%; height: 400px;'></div>
+</div>
+
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 40.7207032,
+        "lng": -73.9861567,
+        "picture": {
+          "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+          "width":  36,
+          "height": 36
+        },
+        "infowindow": "hello!"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>

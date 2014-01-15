@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Nymag::Application.config.secret_key_base = 'fb14b42374d96770da8b5324d01b81e961b6665ae274f2dcc82b0b5cefc24ac57b46360325a0e944183dff00c5111c81e794a1aad71330b5dedd3b7a54d2de17'
+Nymag2::Application.config.secret_key_base = '627034dad32e6687cacba90918a7b8c1c0822b63939c962a6f3a9e439f8b26ed55123465f982d09d558eb76d684ba81f9317a7edd79a1d5eebdd80b501a620b5'

@@ -32,10 +32,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-#prettification
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+#scraping that data
+gem 'httparty'
+gem "nokogiri"
 
 #geocoding for restaurants
 gem "geocoder"
@@ -43,12 +42,16 @@ gem "geocoder"
 #google mapping
 gem 'gmaps4rails'
 
-# for exporting data
-gem "json"
+#prettification
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
 
-#scraping that data
-gem 'httparty'
-gem "nokogiri"
+#testing
+group :development, :test do
+	gem 'rspec-rails'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

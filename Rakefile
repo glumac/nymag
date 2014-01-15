@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Nymag::Application.load_tasks
+Nymag2::Application.load_tasks
