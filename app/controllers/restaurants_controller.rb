@@ -5,6 +5,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    @formaps = Restaurant.first
+    @located = Restaurant.near([40.67, -73.97], 100)  
+    @hash = Gmaps4rails.build_markers(@located) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+    end
   end
 
   # GET /restaurants/1
