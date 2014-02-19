@@ -40,7 +40,8 @@ namespace :restaurantlist do
 				end
 				add = item.at_css('.address')
 				if add
-					address = add.text[0, 250]
+					add2 = add.text[0, 250]
+					address = add2.split("nr.")[0]
 				end
 				type = item.at_css('.main').next_element
 				# cuisinearray = []
