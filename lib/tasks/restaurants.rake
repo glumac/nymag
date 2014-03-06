@@ -32,19 +32,10 @@ namespace :restaurantlist do
 				add = item.at_css('.address')
 				if add
 					add2 = add.text[0, 250]
-					address = add2.split("nr.")[0]
+					address = add2.split(",")[0]
 				end
 				type = item.at_css('.main').next_element
-        # if type
-        #   puts type
-        # end
-				# cuisinearray = []
         cuisinenamearray = type.search('li').map {|li| li.text}
-        # if cuisinearray
-        #   puts cuisinearray
-        # end
-				# type.css('li').each do |nomnomnom|
-        		  #    	cuisinearray << nomnomnom.text
         cuisinecodearray = []
         cuisinenamearray.each do |i|
           case i
@@ -159,20 +150,25 @@ namespace :restaurantlist do
           end
         end
         cuisine = "#{[cuisinecodearray].join(', ')}"
-        # cuisine = nil
-        puts cuisine
-
-	     #  	end
-			 #  	puts cuisine
 			 	priceDiv = type.next_element
 			 	if priceDiv
 			 		pricetext = priceDiv.text
-          # m = /[$-]/.match(pricetext)
-          # if m 
-          #   price = m.post_match
-          # end
-          if pricetext
-            price = pricetext[0, 250]
+          if pricetext.include? "$$$-$$$$"
+            price = 7
+          elsif pricetext.include? "$$$$"
+            price = 6
+          elsif pricetext.include? "$$-$$$"
+            price = 5
+          elsif pricetext.include? "$$$"
+            price = 4
+          elsif pricetext.include? "$$-$"
+            price = 3
+          elsif pricetext.include? "$$"
+            price = 2
+          elsif pricetext.include? "$"
+            price = 1
+          else
+            price = 0
           end
         end 
 				neighborhoodDiv = priceDiv.next_element
@@ -183,7 +179,7 @@ namespace :restaurantlist do
         # puts criticpick
         # puts link
         # puts description
-        # puts address
+        puts address
         # puts cuisine
         # puts price
         # puts neighborhood
