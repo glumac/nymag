@@ -53,6 +53,9 @@ group :development, :test do
 	gem 'rspec-rails'
 end
 
+#dump to json
+gem 'yaml_db'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
